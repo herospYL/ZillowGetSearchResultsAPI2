@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchResults:searchresults
+        xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd http://www.zillowstatic.com/vstatic/89ef69c/static/xsd/SearchResults.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd">
+    <request>
+        <address>2114 Bigelow Ave</address>
+        <citystatezip>Seattle, WA</citystatezip>
+    </request>
+    <message>
+        <text>Request successfully processed</text>
+        <code>0</code>
+    </message>
+    <response>
+        <results>
+            <result>
+                <zpid>48749425</zpid>
+                <links>
+                    <homedetails>http://www.zillow.com/homedetails/2114-Bigelow-Ave-N-Seattle-WA-98109/48749425_zpid/</homedetails>
+                    <graphsanddata>http://www.zillow.com/homedetails/2114-Bigelow-Ave-N-Seattle-WA-98109/48749425_zpid/#charts-and-data</graphsanddata>
+                    <mapthishome>http://www.zillow.com/homes/48749425_zpid/</mapthishome>
+                    <comparables>http://www.zillow.com/homes/comps/48749425_zpid/</comparables>
+                </links>
+                <address>
+                    <street>2114 Bigelow Ave N</street>
+                    <zipcode>98109</zipcode>
+                    <city>Seattle</city>
+                    <state>WA</state>
+                    <latitude>47.637933</latitude>
+                    <longitude>-122.347938</longitude>
+                </address>
+                <zestimate>
+                    <amount currency="USD">1576693</amount>
+                    <last-updated>10/27/2016</last-updated>
+                    <oneWeekChange deprecated="true"></oneWeekChange>
+                    <valueChange duration="30" currency="USD">-24434</valueChange>
+                    <valuationRange>
+                        <low currency="USD">1497858</low>
+                        <high currency="USD">1655528</high>
+                    </valuationRange>
+                    <percentile>0</percentile>
+                </zestimate>
+                <localRealEstate>
+                    <region name="East Queen Anne" id="271856" type="neighborhood">
+                        <zindexValue>821,600</zindexValue>
+                        <links>
+                            <overview>http://www.zillow.com/local-info/WA-Seattle/East-Queen-Anne/r_271856/</overview>
+                            <forSaleByOwner>http://www.zillow.com/east-queen-anne-seattle-wa/fsbo/</forSaleByOwner>
+                            <forSale>http://www.zillow.com/east-queen-anne-seattle-wa/</forSale>
+                        </links>
+                    </region>
+                </localRealEstate>
+            </result>
+            <result>
+                <zpid>48749425</zpid>
+                <links>
+                    <homedetails>http://www.zillow.com/homedetails/2114-Bigelow-Ave-N-Seattle-WA-98109/48749425_zpid/</homedetails>
+                    <graphsanddata>http://www.zillow.com/homedetails/2114-Bigelow-Ave-N-Seattle-WA-98109/48749425_zpid/#charts-and-data</graphsanddata>
+                    <mapthishome>http://www.zillow.com/homes/48749425_zpid/</mapthishome>
+                    <comparables>http://www.zillow.com/homes/comps/48749425_zpid/</comparables>
+                </links>
+                <address>
+                    <street>2016 Bigelow Ave N</street>
+                    <zipcode>98109</zipcode>
+                    <city>Seattle</city>
+                    <state>WA</state>
+                    <latitude>47.637933</latitude>
+                    <longitude>122.347938</longitude>
+                </address>
+                <zestimate>
+                    <amount currency="USD">1576693</amount>
+                    <last-updated>10/27/2016</last-updated>
+                    <oneWeekChange deprecated="true"></oneWeekChange>
+                    <valueChange duration="30" currency="USD">-24434</valueChange>
+                    <valuationRange>
+                        <low currency="USD">1497858</low>
+                        <high currency="USD">1655528</high>
+                    </valuationRange>
+                    <percentile>0</percentile>
+                </zestimate>
+                <localRealEstate>
+                    <region name="East Queen Anne" id="271856" type="neighborhood">
+                        <zindexValue>821,600</zindexValue>
+                        <links>
+                            <overview>http://www.zillow.com/local-info/WA-Seattle/East-Queen-Anne/r_271856/</overview>
+                            <forSaleByOwner>http://www.zillow.com/east-queen-anne-seattle-wa/fsbo/</forSaleByOwner>
+                            <forSale>http://www.zillow.com/east-queen-anne-seattle-wa/</forSale>
+                        </links>
+                    </region>
+                  <region name="East Queen Anne" id="271856" type="neighborhood">
+                    <zindexValue>821,600</zindexValue>
+                    <links>
+                      <overview>http://www.zillow.com/local-info/WA-Seattle/East-Queen-Anne/r_271856/</overview>
+                      <forSaleByOwner>http://www.zillow.com/east-queen-anne-seattle-wa/fsbo/</forSaleByOwner>
+                      <forSale>http://www.zillow.com/east-queen-anne-seattle-wa/</forSale>
+                    </links>
+                  </region>
+                </localRealEstate>
+            </result>
+        </results>
+    </response>
+</SearchResults:searchresults>
+        <!-- H:004  T:22ms  S:869  R:Sat Oct 29 11:18:36 PDT 2016  B:5.0.35833-master.6a0243b~hotfix_pre.a58afe3 -->

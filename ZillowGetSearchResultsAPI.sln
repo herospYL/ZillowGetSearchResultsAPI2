@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZillowGetSearchResultsAPI", "ZillowGetSearchResultsAPI\ZillowGetSearchResultsAPI.csproj", "{F57A89B8-DF65-4E61-8230-62DDEBF4DB92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZillowGetSearchResultsAPI.Tests", "ZillowGetSearchResultsAPI.Tests\ZillowGetSearchResultsAPI.Tests.csproj", "{AB8F2E88-7597-4319-895F-EAB1C1A851A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F57A89B8-DF65-4E61-8230-62DDEBF4DB92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F57A89B8-DF65-4E61-8230-62DDEBF4DB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F57A89B8-DF65-4E61-8230-62DDEBF4DB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F57A89B8-DF65-4E61-8230-62DDEBF4DB92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB8F2E88-7597-4319-895F-EAB1C1A851A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8F2E88-7597-4319-895F-EAB1C1A851A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8F2E88-7597-4319-895F-EAB1C1A851A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8F2E88-7597-4319-895F-EAB1C1A851A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
