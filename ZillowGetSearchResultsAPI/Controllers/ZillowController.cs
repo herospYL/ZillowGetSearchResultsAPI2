@@ -34,41 +34,52 @@ namespace ZillowGetSearchResultsAPI.Controllers
         /// <returns>The <see cref="Task"/>.</returns>
         [SwaggerOperation("Get")]
         [SwaggerResponse(HttpStatusCode.OK)]
-        [SwaggerResponse(HttpStatusCode.NotFound)]
-        [SwaggerResponse(HttpStatusCode.BadRequest)]
-        public async Task<searchresults> Get()
+        public string Get()
         {
-            searchresults result = null;
-            var col = this.Request.RequestUri.ParseQueryString();
-            using (var client = new HttpClient())
-            {
-                using (var response = await client.GetAsync(GenerateRequestUrl(col)))
-                {
-                    if (response.StatusCode != HttpStatusCode.OK)
-                    {
-                        throw new HttpResponseException(response);
-                    }
-
-                    try
-                    {
-                        using (var content = response.Content)
-                        {
-                            result = await content.ReadAsAsync<searchresults>();
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        throw new HttpResponseException(
-                                  new HttpResponseMessage(HttpStatusCode.BadRequest)
-                                      {
-                                          Content = new StringContent(e.Message)
-                                      });
-                    }
-                }
-            }
-
-            return result;
+            return ZWSID;
         }
+
+        //// GET api/zillow
+
+        ///// <summary>The get.</summary>
+        ///// <returns>The <see cref="Task"/>.</returns>
+        //[SwaggerOperation("Get")]
+        //[SwaggerResponse(HttpStatusCode.OK)]
+        //[SwaggerResponse(HttpStatusCode.NotFound)]
+        //[SwaggerResponse(HttpStatusCode.BadRequest)]
+        //public async Task<searchresults> Get()
+        //{
+        //    searchresults result = null;
+        //    var col = this.Request.RequestUri.ParseQueryString();
+        //    using (var client = new HttpClient())
+        //    {
+        //        using (var response = await client.GetAsync(GenerateRequestUrl(col)))
+        //        {
+        //            if (response.StatusCode != HttpStatusCode.OK)
+        //            {
+        //                throw new HttpResponseException(response);
+        //            }
+
+        //            try
+        //            {
+        //                using (var content = response.Content)
+        //                {
+        //                    result = await content.ReadAsAsync<searchresults>();
+        //                }
+        //            }
+        //            catch (Exception e)
+        //            {
+        //                throw new HttpResponseException(
+        //                          new HttpResponseMessage(HttpStatusCode.BadRequest)
+        //                              {
+        //                                  Content = new StringContent(e.Message)
+        //                              });
+        //            }
+        //        }
+        //    }
+
+        //    return result;
+        //}
 
         //// GET api/zillow/str
 
