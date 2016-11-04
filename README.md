@@ -3,7 +3,7 @@ A Zillow Get Search Results API Server. It calls the API given by Zillw Get Sear
 in backend.
 
 ### Site URL:
-liangyuanzillowapi.azurewebsites.net
+http://liangyuanzillowapi.azurewebsites.net
 
 ### API Methods
 * /api/zillow
