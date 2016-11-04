@@ -9,8 +9,9 @@
 
 namespace ZillowGetSearchResultsAPI.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Controllers;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>The google map key controller test.</summary>
     [TestClass]

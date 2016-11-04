@@ -11,13 +11,17 @@ namespace ZillowGetSearchResultsAPI.Controllers
 {
     using System;
     using System.Collections.Specialized;
+    using System.IO;
     using System.Net;
     using System.Net.Http;
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Http;
+    using System.Xml;
 
     using Swashbuckle.Swagger.Annotations;
+
+    using ZillowGetSearchResultsAPI.Data;
 
     /// <summary>The values controller.</summary>
     public class ZillowController : ApiController
@@ -34,76 +38,68 @@ namespace ZillowGetSearchResultsAPI.Controllers
         /// <returns>The <see cref="Task"/>.</returns>
         [SwaggerOperation("Get")]
         [SwaggerResponse(HttpStatusCode.OK)]
-        public string Get()
+        [SwaggerResponse(HttpStatusCode.NotFound)]
+        [SwaggerResponse(HttpStatusCode.BadRequest)]
+        [AllowCrossSite]
+        public async Task<string> Get()
         {
-            return ZWSID;
+            string result = null;
+            var col = this.Request.RequestUri.ParseQueryString();
+            using (var client = new HttpClient())
+            {
+                using (var response = await client.GetAsync(GenerateRequestUrl(col)))
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        throw new HttpResponseException(response);
+                    }
+
+                    try
+                    {
+                        using (var stream = await response.Content.ReadAsStreamAsync())
+                        {
+                            var xmlDocument = new XmlDocument();
+                            xmlDocument.Load(stream);
+                            result = xmlDocument.OuterXml;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        throw new HttpResponseException(
+                                  new HttpResponseMessage(HttpStatusCode.BadRequest)
+                                  {
+                                      Content = new StringContent(e.Message)
+                                  });
+                    }
+                }
+            }
+
+            return result;
         }
 
-        //// GET api/zillow
+        // GET api/zillow/id
 
-        ///// <summary>The get.</summary>
-        ///// <returns>The <see cref="Task"/>.</returns>
-        //[SwaggerOperation("Get")]
-        //[SwaggerResponse(HttpStatusCode.OK)]
-        //[SwaggerResponse(HttpStatusCode.NotFound)]
-        //[SwaggerResponse(HttpStatusCode.BadRequest)]
-        //public async Task<searchresults> Get()
-        //{
-        //    searchresults result = null;
-        //    var col = this.Request.RequestUri.ParseQueryString();
-        //    using (var client = new HttpClient())
-        //    {
-        //        using (var response = await client.GetAsync(GenerateRequestUrl(col)))
-        //        {
-        //            if (response.StatusCode != HttpStatusCode.OK)
-        //            {
-        //                throw new HttpResponseException(response);
-        //            }
+        /// <summary>The get test.</summary>
+        /// <param name="id">The id.</param>
+        /// <returns>The <see cref="string"/>.</returns>
+        [SwaggerOperation("GetById")]
+        [SwaggerResponse(HttpStatusCode.OK)]
+        [SwaggerResponse(HttpStatusCode.NotFound)]
+        [AllowCrossSite]
+        public string Get(int id)
+        {
+            string path = "C:\\Users\\liang.yuan\\Desktop\\Business Entities\\ZillowGetSearchResultsAPI\\ZillowGetSearchResultsAPI2\\ZillowGetSearchResultsAPI\\sample-response.xml";
+            string ret = null;
 
-        //            try
-        //            {
-        //                using (var content = response.Content)
-        //                {
-        //                    result = await content.ReadAsAsync<searchresults>();
-        //                }
-        //            }
-        //            catch (Exception e)
-        //            {
-        //                throw new HttpResponseException(
-        //                          new HttpResponseMessage(HttpStatusCode.BadRequest)
-        //                              {
-        //                                  Content = new StringContent(e.Message)
-        //                              });
-        //            }
-        //        }
-        //    }
+            using (var reader = new StreamReader(path))
+            {
+                var xmlDocument = new XmlDocument();
+                xmlDocument.Load(reader);
+                ret = xmlDocument.OuterXml;
+            }
 
-        //    return result;
-        //}
-
-        //// GET api/zillow/str
-
-        ///// <summary>The get test.</summary>
-        ///// <param name="id">The id.</param>
-        ///// <returns>The <see cref="string"/>.</returns>
-        //[SwaggerOperation("GetById")]
-        //[SwaggerResponse(HttpStatusCode.OK)]
-        //[SwaggerResponse(HttpStatusCode.NotFound)]
-        //public searchresults Get(int id)
-        //{
-        //    string path = "C:\\Users\\liang.yuan\\Desktop\\Business Entities\\ZillowGetSearchResultsAPI\\ZillowGetSearchResultsAPI2\\ZillowGetSearchResultsAPI\\sample-response.xml";
-        //    var fullPath = path;
-        //    searchresults result = null;
-
-        //    XmlSerializer serializer = new XmlSerializer(typeof(searchresults));
-
-        //    using (var reader = new StreamReader(fullPath))
-        //    {
-        //        result = serializer.Deserialize(reader) as searchresults;
-        //    }
-
-        //    return result;
-        //}
+            return ret;
+        }
 
         /// <summary>The generate request url.</summary>
         /// <param name="rawCollection">The raw Collection.</param>

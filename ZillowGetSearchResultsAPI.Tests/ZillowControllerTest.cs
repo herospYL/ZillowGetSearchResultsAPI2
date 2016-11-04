@@ -9,8 +9,9 @@
 
 namespace ZillowGetSearchResultsAPI.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Controllers;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>The zillow controller test.</summary>
     [TestClass]
@@ -24,8 +25,8 @@ namespace ZillowGetSearchResultsAPI.Tests
         public void TestZillow()
         {
             var controller = new ZillowController();
-            var zillow = controller.Get();
-            Assert.AreEqual(zillow, ZWSID);
+            var zillow = controller.Get(0);
+            Assert.IsNotNull(zillow);
         }
     }
 }

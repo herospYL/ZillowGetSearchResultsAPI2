@@ -14,6 +14,8 @@ namespace ZillowGetSearchResultsAPI.Controllers
 
     using Swashbuckle.Swagger.Annotations;
 
+    using ZillowGetSearchResultsAPI.Data;
+
     /// <summary>The google map key controller.</summary>
     public class GoogleMapKeyController : ApiController
     {
@@ -26,6 +28,7 @@ namespace ZillowGetSearchResultsAPI.Controllers
         /// <returns>The <see cref="string"/>.</returns>
         [SwaggerOperation("Get")]
         [SwaggerResponse(HttpStatusCode.OK)]
+        [AllowCrossSite]
         public string Get()
         {
             return GoogleMapKey;
