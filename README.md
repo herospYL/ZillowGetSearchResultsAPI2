@@ -5,9 +5,9 @@ in backend.
 ### Site URL:
 liangyuanzillowapi.azurewebsites.net
 
-# API Methods
+### API Methods
 * /api/zillow
 * /api/googlemapkey
 
-# Sample Call
+### Sample Call
 /api/zillow?address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA
